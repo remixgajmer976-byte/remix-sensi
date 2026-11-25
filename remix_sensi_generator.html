@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b0b12">
+<title>REMIX SENSI — Premium Generator</title>
+<style>
+:root{--bg:#090a10;--panel:#12141e;--panel2:#191c29;--line:#292d3c;--text:#f4f5fb;--muted:#a2a7ba;--red:#ff354d;--red2:#b91635;--green:#48d69a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#38202e 0%,#10111a 38%,var(--bg) 75%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+.wrap{max-width:1050px;margin:auto;padding:22px 16px 50px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid #ffffff14;padding:8px 0 18px}.brand{font-weight:950;letter-spacing:2px;font-size:clamp(21px,4vw,30px)}.brand span{color:var(--red)}.pill{border:1px solid #ff354d77;color:#ff8794;border-radius:99px;padding:5px 11px;font-size:11px;font-weight:800;letter-spacing:1px}
+.hero{text-align:center;padding:36px 0 25px}.eyebrow{color:#ff8190;font-weight:800;letter-spacing:3px;font-size:11px}.hero h1{font-size:clamp(32px,7vw,58px);line-height:1.04;margin:10px 0;background:linear-gradient(100deg,#fff,#ff8490 60%,#ff354d);background-clip:text;color:transparent}.hero p{color:var(--muted);max-width:620px;margin:12px auto}
+.layout{display:grid;grid-template-columns:1fr 1fr;gap:18px}.card{background:linear-gradient(145deg,#171a26,#10121a);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 18px 50px #0005}.card h2{margin:0 0 5px;font-size:19px}.sub{color:var(--muted);font-size:13px;margin:0 0 20px}
+label{display:block;font-size:12px;color:#c8cada;font-weight:750;margin:14px 0 7px}input,select{width:100%;padding:12px 13px;border-radius:11px;border:1px solid #34394b;background:#0d0f17;color:var(--text);font:inherit;outline:none}input:focus,select:focus{border-color:var(--red);box-shadow:0 0 0 3px #ff354d1c}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btn{border:0;border-radius:12px;padding:13px 16px;font-weight:900;letter-spacing:.4px;cursor:pointer;color:white;background:linear-gradient(100deg,var(--red2),var(--red));width:100%;margin-top:20px;font-size:14px}.btn:hover{filter:brightness(1.12)}.btn.secondary{background:#252a39;border:1px solid #3b4155;margin-top:10px}
+.results{display:none}.result-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}.tag{font-size:10px;color:var(--green);border:1px solid #48d69a66;padding:4px 8px;border-radius:99px;font-weight:800}.setting{padding:13px 0;border-bottom:1px solid #ffffff12}.setting:last-child{border:0}.setting-top{display:flex;justify-content:space-between;align-items:center;font-weight:750}.value{font-size:22px;color:#ff6577;font-weight:950;font-variant-numeric:tabular-nums}.track{height:7px;background:#292d3a;border-radius:99px;margin-top:9px;overflow:hidden}.fill{height:100%;border-radius:99px;background:linear-gradient(90deg,#a91432,#ff5368)}.note{margin-top:16px;padding:12px;border:1px solid #ffffff18;background:#ffffff08;border-radius:12px;color:var(--muted);font-size:12px}.note strong{color:#fff}.foot{text-align:center;color:#777e92;font-size:11px;margin-top:25px}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.wrap{padding:14px 12px 35px}.card{padding:18px}.hero{padding:27px 0 20px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><div class="brand">REMIX<span>.</span>SENSI</div><div class="pill">PREMIUM SENSI ENGINE</div></header>
+<section class="hero"><div class="eyebrow">CUSTOM PROFILE GENERATOR</div><h1>FIND YOUR AIM.</h1><p>Build a testable Free Fire sensitivity starting profile from your device and play style. Fine-tune it with real Training Ground results.</p></section>
+<main class="layout">
+<section class="card">
+<h2>01 / Device & Play Style</h2><p class="sub">Enter your device details to create a starting profile.</p>
+<form id="form">
+<label for="platform">Device platform</label><select id="platform"><option>Android</option><option>iPhone</option></select>
+<label for="model">Device model (optional)</label><input id="model" placeholder="e.g. POCO M5">
+<div class="two"><div><label for="ram">RAM</label><select id="ram"><option>2</option><option>3</option><option>4</option><option selected>6</option><option>8</option><option>12</option><option>16</option></select></div><div><label for="refresh">Refresh rate</label><select id="refresh"><option>60</option><option selected>90</option><option>120</option><option>144</option><option>165</option></select></div></div>
+<div class="two"><div><label for="dpi">DPI (Android)</label><input id="dpi" type="number" min="100" max="1000" value="392"></div><div><label for="screen">Screen size</label><select id="screen"><option value="small">Compact</option><option value="normal" selected>Standard</option><option value="large">Large</option></select></div></div>
+<label for="style">Sensitivity style</label><select id="style"><option value="low">Low / controlled</option><option value="medium" selected>Medium / balanced</option><option value="high">High / fast drag</option></select>
+<label for="goal">Main headshot goal</label><select id="goal"><option value="accuracy" selected>Accuracy headshot</option><option value="onetap">One-tap practice</option><option value="close">Close-range headshot</option><option value="balanced">All-rounder</option></select>
+<label for="button">Fire button size: <span id="buttonOut">48%</span></label><input id="button" type="range" min="35" max="65" value="48" oninput="buttonOut.textContent=this.value+'%'">
+<button class="btn" type="submit">GENERATE MY PROFILE ↗</button>
+</form>
+</section>
+<section class="card">
+<div class="result-head"><div><h2>02 / Your Sensi Profile</h2><p class="sub" style="margin:4px 0 0">Your generated starting values</p></div><span class="tag">TEST PROFILE</span></div>
+<div id="empty" class="note">Your settings will appear here after you select your device and press <strong>Generate My Profile</strong>.</div>
+<div id="results" class="results">
+<div id="deviceSummary" class="note" style="margin:0 0 12px"></div>
+<div id="settings"></div>
+<div class="note"><strong>Calibration tip:</strong> If your aim passes above the target, lower General or Red Dot by 3–5. If your drag stops below the target, raise the relevant value by 3–5. Change one setting at a time.</div>
+<button class="btn" id="copy" type="button">COPY PROFILE</button>
+<button class="btn secondary" id="save" type="button">SAVE PROFILE ON THIS DEVICE</button>
+<div id="savedMsg" class="sub" aria-live="polite" style="margin:10px 0 0"></div>
+</div>
+</section>
+</main>
+<div class="foot">REMIX SENSI • Fan-made community tool. Not affiliated with Garena. No setting guarantees headshots or works identically on every device.</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+let currentProfile=null;
+function clamp(n,min,max){return Math.max(min,Math.min(max,Math.round(n)))}
+function generate(e){
+ e.preventDefault();
+ const platform=$('platform').value,ram=+$('ram').value,refresh=+$('refresh').value,dpi=+$('dpi').value||392,style=$('style').value,goal=$('goal').value,screen=$('screen').value,button=+$('button').value;
+ if(platform==='Android'&&(dpi<100||dpi>1000)){alert('Enter a DPI between 100 and 1000.');return}
+ // Transparent heuristic: this is a starting-point calculator, not device measurement.
+ let base={low:139,medium:158,high:178}[style];
+ let dpiAdj=platform==='Android'?Math.max(-10,Math.min(10,(dpi-392)/18)):0;
+ let refreshAdj=refresh>=120?2:refresh<=60?-2:0;
+ let ramAdj=ram<=3?-3:ram>=8?1:0;
+ let screenAdj=screen==='large'?-2:screen==='small'?2:0;
+ let goalAdj={accuracy:-3,onetap:2,close:5,balanced:0}[goal];
+ let g=base+dpiAdj+refreshAdj+ramAdj+screenAdj+goalAdj;
+ let profile={
+  'General':clamp(g,90,200),
+  'Red Dot':clamp(g-9+(goal==='close'?3:0),85,200),
+  '2X Scope':clamp(g-20,75,190),
+  '4X Scope':clamp(g-34,65,180),
+  'Sniper Scope':clamp(g-68,35,150),
+  'Free Look':clamp(100+refreshAdj,70,150)
+ };
+ currentProfile={brand:'REMIX SENSI',version:'Custom test profile',platform,model:$('model').value||'Not specified',ram:ram+' GB',refresh:refresh+' Hz',dpi:platform==='Android'?dpi:'Not applicable',style,goal,fireButton:button+'%',settings:profile};
+ $('empty').style.display='none';$('results').style.display='block';
+ $('deviceSummary').textContent=`${currentProfile.platform} • ${currentProfile.model} • ${currentProfile.ram} • ${currentProfile.refresh} • DPI ${currentProfile.dpi} • ${style} style`;
+ $('settings').innerHTML=Object.entries(profile).map(([name,val])=>`<div class="setting"><div class="setting-top"><span>${name}</span><span class="value">${val}</span></div><div class="track"><div class="fill" style="width:${val/200*100}%"></div></div></div>`).join('')+`<div class="setting"><div class="setting-top"><span>Fire button size</span><span class="value">${button}%</span></div></div>`;
+ $('savedMsg').textContent='';
+}
+$('form').addEventListener('submit',generate);
+function profileText(){if(!currentProfile)return '';return `REMIX SENSI — ${currentProfile.version}\nDevice: ${currentProfile.platform} ${currentProfile.model}\nRAM: ${currentProfile.ram} | Refresh: ${currentProfile.refresh} | DPI: ${currentProfile.dpi}\nStyle: ${currentProfile.style} | Goal: ${currentProfile.goal}\n${Object.entries(currentProfile.settings).map(([k,v])=>k+': '+v).join('\n')}\nFire button: ${currentProfile.fireButton}\nTest values only; tune to your own gameplay.`}
+$('copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(profileText());$('savedMsg').textContent='Copied!'}catch(e){$('savedMsg').textContent='Clipboard unavailable in this browser. Select and copy your settings manually.'}});
+$('save').addEventListener('click',()=>{if(!currentProfile)return;try{localStorage.setItem('remixSensiProfile',JSON.stringify(currentProfile));$('savedMsg').textContent='Profile saved in this browser on this device.'}catch(e){$('savedMsg').textContent='Could not save in this browser.'}});
+</script>
+</body></html>
